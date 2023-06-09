@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean name="menuController" class="org.example.Controller.MenuController">
+        <property name="profileService" ref="profileService"/>
+    </bean>
+
+    <bean name="profileService" class="org.example.Servise.ProfileService">
+        <property name="profileRepo" ref="profileRepo"/>
+        <property name="adminController" ref="adminController"/>
+        <property name="userController" ref="userController"/>
+    </bean>
+
+    <bean name="profileRepo" class="org.example.Repo.ProfileRepo">
+
+    </bean>
+
+    <bean name="userController" class="org.example.Controller.UserController">
+
+    </bean>
+    <bean name="adminController" class="org.example.Controller.AdminController">
+
+    </bean>
+
+
+</beans>
+
+
